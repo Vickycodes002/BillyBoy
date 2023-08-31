@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comictitle</title>
+     <!--GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+     <!--OWL CAROUSEL -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+     <!--BOX ICONS-->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<style>
+    #viewpdf{
+        height: 800px;
+    }
+
+    .logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/billyboylogo.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.02; 
+    pointer-events: none; /* Allow interaction with the PDF underneath */
+}
+</style>
+<body>
+
+     <!--NAV-->
+<div class="nav-wrapper">
+    <div class="container">
+        <div class="nav">
+            <a href="#" class="logo">
+                <i class='bx bxs-movie-play bx-tada main-color'></i>Billy<span class="main-color">Bo</span>y
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#"></a></li>
+                <li>
+                    <a href="sign/signIn.html" class="btn btn-hover">
+                        <span>Sign in</span>
+                    </a>
+                </li>
+            </ul>
+            <!--MOBILE MENU TOGGLE-->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END NAV-->
+  
+
+    <div class="container">
+        <div id="viewpdf"></div>
+        </div>
+        <div class="logo-overlay"></div>
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.js" integrity="sha512-I6am7LdwcOMDrXQBfJ6VQiqARVrGM9desGYl3ss/NkXjuNRkLSTzcMXjzVyH6U4W2UoIOikiFV28cos/gWCdDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+var viewpdf = $("#viewpdf")
+
+
+PDFObject.embed("The Adventures Globacop Issue 01.pdf", viewpdf, {
+    pdfOpenParams: {
+                navpanes: 0, // Hide navigation pane
+                toolbar: 0 // Hide toolbar
+            },
+            width: "100%",
+            height: "100%"
+} );
+</script>
+ <!--APP SCRIPT-->
+ <script src="app.js"></script>
+</html>
